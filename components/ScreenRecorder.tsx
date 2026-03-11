@@ -3,7 +3,7 @@
 import {useState, useRef} from 'react';
 import {useRouter} from 'next/navigation';
 import {createUploadUrl, getAssetIdFromUpload} from '@/app/actions';
-import {Loader2, StopCircle, Monitor} from 'lucide-react';
+import {Loader2, StopCircle, Monitor, Video} from 'lucide-react';
 
 export default function ScreenRecorder () {
     const [isRecording, setIsRecording] = useState(false);
@@ -16,7 +16,7 @@ export default function ScreenRecorder () {
     const micStreamRef = useRef<MediaStream | null>(null);
     const liveVideoRef = useRef<HTMLVideoElement>(null);
 
-    const router = useRouter;
+    const router = useRouter();
 
     const startRecording = async () => {
         try{
@@ -53,7 +53,7 @@ export default function ScreenRecorder () {
 
             //Step 6: Set up the recorder
             const mediaRecorder = new MediaRecorder(combinedStream, {
-                mimeType: 'video/webm; codecs=vp9'
+                mimeType: 'video/webm; codecs=vp8,opus'
             });
 
             mediaRecorderRef.current = mediaRecorder;
