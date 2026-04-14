@@ -53,7 +53,7 @@ export default function VideoSummary({playbackId} : {playbackId: string}){
         <button
             onClick={handleGenerate}
             disabled={isGenerating}
-            className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-purple-600 hover:bg-purple-700 disabled:bg-purple-500"
+            className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-purple-600 hover:bg-purple-700 disabled:bg-purple-600/50 text-white rounded-lg font-medium transition"
         >
             {isGenerating ? (
                 <>
@@ -69,6 +69,5 @@ export default function VideoSummary({playbackId} : {playbackId: string}){
                 </>
             )}
         </button>
-    )
-
+    );
 }
