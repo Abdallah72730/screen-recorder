@@ -3,6 +3,7 @@ import {getAssetStatus} from '@/app/actions';
 import MuxPlayerWrapper from '@/components/MuxPlayerWrapper';
 import VideoStatusPoller from '@/components/VideoStatusPoller';
 import ShareButton from '@/components/ShareButton';
+import VideoSummary from '@/components/VideoSummary';
 import {ArrowLeft, Download} from 'lucide-react';
 
 
@@ -68,6 +69,12 @@ export default async function VideoPage ({
                 </div>
             </div>
 
+            {/*AI Summary */}
+            {isVideoReady && isTranscriptReady &&(
+                <div className="mt-6">
+                    <VideoSummary playbackId={playbackId}/>
+                </div>
+            )}
             </div>
             
             {/*Right Column: Transcript */}
