@@ -10,6 +10,11 @@ export default function MuxPlayerWrapper({playbackId, title}: MuxPlayerWrapperPr
     return (
         <MuxPlayer
         playbackId={playbackId}
+        tokens={token ? {
+            playback: token,
+            thumbnail: token,
+            storyboard: token,
+        } : undefined}
         metadata={{
             video_title: title || 'Screen Recording',
         }}
